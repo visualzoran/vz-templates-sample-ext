@@ -1,0 +1,1 @@
+# vz-templates-sample-ext
