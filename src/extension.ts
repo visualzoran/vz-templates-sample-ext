@@ -7,13 +7,15 @@ import * as vscode from 'vscode';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-    var filetemplatesExt = vscode.extensions.getExtension('visualzoran.vz-file-templates');    
+    let filetemplatesExt = vscode.extensions.getExtension('visualzoran.vz-file-templates');    
     if (filetemplatesExt) {
         if (!filetemplatesExt.isActive)
             filetemplatesExt.activate().then((val) => {
-                val.exports.registerTemplatesFolder(context.asAbsolutePath('templates'));
+                let extApi : vzFileTemplates.IVZFileTemplatesApi = val.exports;
+                extApi.registerTemplatesFolder(context.asAbsolutePath('templates'));
             });
-        filetemplatesExt.exports.registerTemplatesFolder(context.asAbsolutePath('templates'));
+        let api : vzFileTemplates.IVZFileTemplatesApi = filetemplatesExt.exports; 
+        api.registerTemplatesFolder(context.asAbsolutePath('templates'));
     }
 
     // Use the console to output diagnostic information (console.log) and errors (console.error)
