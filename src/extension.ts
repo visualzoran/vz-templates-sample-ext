@@ -9,13 +9,15 @@ import * as vscode from 'vscode';
 export function activate(context: vscode.ExtensionContext) {
     let filetemplatesExt = vscode.extensions.getExtension('visualzoran.vz-file-templates');    
     if (filetemplatesExt) {
-        if (!filetemplatesExt.isActive)
+        if (!filetemplatesExt.isActive) {
             filetemplatesExt.activate().then((val) => {
-                let extApi : vzFileTemplates.IVZFileTemplatesApi = val.exports;
+                let extApi : vzFileTemplates.IVZFileTemplatesApi = val;
                 extApi.registerTemplatesFolder(context.asAbsolutePath('templates'));
             });
-        let api : vzFileTemplates.IVZFileTemplatesApi = filetemplatesExt.exports; 
-        api.registerTemplatesFolder(context.asAbsolutePath('templates'));
+        } else {
+            let api : vzFileTemplates.IVZFileTemplatesApi = filetemplatesExt.exports; 
+            api.registerTemplatesFolder(context.asAbsolutePath('templates'));
+        }
     }
 
     // Use the console to output diagnostic information (console.log) and errors (console.error)
