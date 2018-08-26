@@ -14,15 +14,14 @@
         "*"
     ],
     "main": "./out/extension",
-    "contributes": {
-    },
-	"author": {
+    "contributes": {},
+    "author": {
         "name": "Visual Zoran",
         "url": "https://visualzoran.wordpress.com/"
-	},
-	"repository": {
-		"url": "https://github.com/visualzoran/vz-templates-sample-ext"
-	},
+    },
+    "repository": {
+        "url": "https://github.com/visualzoran/vz-templates-sample-ext"
+    },
     "license": "LICENSE",
     "scripts": {
         "vscode:prepublish": "npm run compile",
@@ -39,5 +38,8 @@
         "vscode": "^1.1.6",
         "@types/node": "^7.0.43",
         "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "vz-file-templates": "0.0.6"
     }
 }
