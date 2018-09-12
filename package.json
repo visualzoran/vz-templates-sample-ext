@@ -2,10 +2,10 @@
     "name": "vz-templates-sample-ext",
     "displayName": "vz-templates-sample-ext",
     "description": "Example showing how to add new file templates to templates manager from vs-file-templates extension using another visual studio code extension",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "visualzoran",
     "engines": {
-        "vscode": "^1.23.0"
+        "vscode": "^1.26.0"
     },
     "categories": [
         "Other"
@@ -35,11 +35,11 @@
     ],
     "devDependencies": {
         "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
-        "@types/node": "^7.0.43",
+        "vscode": "^1.1.21",
+        "@types/node": "^8.10.25",
         "@types/mocha": "^2.2.42"
     },
     "dependencies": {
-        "vz-file-templates": "0.0.6"
+        "vz-file-templates": "^1.0.1"
     }
 }
